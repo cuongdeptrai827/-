@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+// not done !
 // Ham tinh tong cac chu so cua 1 so tu nhien
 int sumofDigits(int n){
     if ( n == 0 ) return 0;

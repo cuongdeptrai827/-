@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//not done !
 int main(){
     int a;
     printf(" Input the decimal number : \n");
