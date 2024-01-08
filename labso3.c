@@ -1,51 +1,32 @@
 #include <stdio.h>
-
+//done.
 int main() {
-    // Yêu cầu 1: Nhập số nguyên từ bảng điều khiển và xuất theo hệ thống số 8
+    //Input integers from the console and output according to the 8 number system
     int num1;
-    printf("Nhap mot so nguyen: ");
-    scanf("%o", &num1);
-    printf("So da nhap trong he thong so 8: %o\n", num1);
+    printf("Input an integer: ");
+    scanf("%d", &num1);
+    printf(" number in 8 system: %o\n", num1);
 
-    // Yêu cầu 2: Xuất số thập lục phân và dịch bit sang trái/phải
-    int num2;
-    printf("Nhap mot so nguyen: ");
-    scanf("%x", &num2);
-    printf("So thap luc phan: %x\n", num2);
+    //Output hexadecimal numbers and shift bits left/right
+    printf("Number in hex system: %x\n", num1);
 
     int shiftAmount;
-    printf("Nhap so bit can dich chuyen (phai 2): ");
+    printf("Input bits to shift : ");
     scanf("%d", &shiftAmount);
 
-    int shiftedLeft = num2 << shiftAmount;
-    int shiftedRight = num2 >> shiftAmount;
+    int shiftedLeft = num1 << shiftAmount;
+    int shiftedRight = num1 >> shiftAmount;
 
-    printf("Sau khi dich trai %d bit: %x\n", shiftAmount, shiftedLeft);
-    printf("Sau khi dich phai %d bit: %x\n", shiftAmount, shiftedRight);
+    printf("After shift to the left %d bit: %x\n", shiftAmount, shiftedLeft);
+    printf("After shift to the right %d bit: %x\n", shiftAmount, shiftedRight);
 
-    // Yêu cầu 3: Nhập số nguyên theo hệ thống số được chỉ định và thực hiện phép toán bit
-    int num3;
-    int base;
-    printf("Nhap mot so nguyen: ");
-    scanf("%d", &num3);
-    printf("Nhap he thong so cua so vua nhap (8 hoac 16): ");
-    scanf("%d", &base);
+    //Enter an integer according to the specified number system and perform bit operations
+    int num2;
+    printf("Input an integer : ");
+    scanf("%d", &num2);
+    int result = num1 ^ num2; // Phép XOR (loại trừ)
 
-    int num1InDecimal;
-    if (base == 8) {
-        sscanf("%o", &num1InDecimal, num3);
-    } else if (base == 16) {
-        sscanf("%x", &num1InDecimal, num3);
-    } else {
-        printf("He thong so khong hop le!\n");
-        return 1;
-    }
-
-    int result = num1InDecimal ^ num3; // Phép XOR (loại trừ)
-    int result2 = num1InDecimal & num3; // Phép AND
-
-    printf("Ket qua cua phep XOR voi so da nhap: %x\n", result);
-    printf("Ket qua cua phep AND voi so da nhap: %x\n", result2);
+    printf("XOR result of number 1 and number 2: %d\n", result);
 
     return 0;
 }
