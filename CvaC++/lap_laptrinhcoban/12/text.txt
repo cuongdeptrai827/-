@@ -1,0 +1,7 @@
+List of subdirectories:
+.
+..
+.idea
+folder1
+folder2
+folder3
